@@ -38,15 +38,15 @@ class MainActivity : AppCompatActivity() {
             val msg: Msg = Msg.Decrement
             messageView.text = update()(msg)(Integer.parseInt(messageView.text.toString())).toString()
         }
-
     }
 
+
     //MODEL
-    fun init(): Model = 0
+    private fun init(): Model = 0
 
 
     //UPDATE
-    fun update(): update {
+    private fun update(): update {
         return { msg ->
             when (msg) {
                 is Msg.Increment -> { model ->
