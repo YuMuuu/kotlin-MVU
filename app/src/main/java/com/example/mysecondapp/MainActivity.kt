@@ -29,14 +29,14 @@ class MainActivity : AppCompatActivity() {
 
         val button: Button = findViewById(R.id.button)
         button.setOnClickListener {
-            val msg: Msg = Msg.Increment
-            messageView.text = update()(msg)(Integer.parseInt(messageView.text.toString())).toString()
+            val increment: Msg = Msg.Increment
+            messageView.text = update()(increment)(Integer.parseInt(messageView.text as String)).toString()
         }
 
         val button2: Button = findViewById(R.id.button2)
         button2.setOnClickListener {
-            val msg: Msg = Msg.Decrement
-            messageView.text = update()(msg)(Integer.parseInt(messageView.text.toString())).toString()
+            val decrement: Msg = Msg.Decrement
+            messageView.text = update()(decrement)(Integer.parseInt(messageView.text as String)).toString()
         }
     }
 
