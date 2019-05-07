@@ -16,22 +16,22 @@ sealed class Msg {
 typealias update = (Msg) -> (Model) -> Model
 
 class MainActivity : AppCompatActivity() {
-    //VIEW
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+    }
+
+    override fun onResume() {
+        super.onResume()
 
         val messageView: TextView = findViewById(R.id.message_view)
         messageView.text = init().toString()
 
-
         val button: Button = findViewById(R.id.button)
-
         button.setOnClickListener {
             val msg: Msg = Msg.Increment
             messageView.text = update()(msg)(Integer.parseInt(messageView.text.toString())).toString()
         }
-
 
         val button2: Button = findViewById(R.id.button2)
         button2.setOnClickListener {
